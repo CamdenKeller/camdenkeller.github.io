@@ -131,7 +131,7 @@ const AboutMeSection = () => {
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100 transition-all duration-300 hover:scale-[1.02] hover:shadow-md hover:bg-gray-75 cursor-pointer">
               <Tag label="Caregiver" className="bg-blue-100 text-blue-800" />
-              <Typography className="text-sm">supporting my neurodivergent brother's growth</Typography>
+              <Typography className="text-sm">supporting my neurodivergent brother&apos;s growth</Typography>
             </div>
             <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100 transition-all duration-300 hover:scale-[1.02] hover:shadow-md hover:bg-gray-75 cursor-pointer">
               <Tag label="World Traveler" className="bg-green-100 text-green-800" />
