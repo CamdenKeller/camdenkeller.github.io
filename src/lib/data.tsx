@@ -204,7 +204,7 @@ export const EXPERIENCES: ExperienceDetails[] = [
     startDate: new Date(2025, 4),
     currentlyWorkHere: true,
     summary: [
-      "Co-leading a team building AI tools that automate ESG reporting and help companies track sustainability performance.",
+      "Co-leading a team building AI tools that automate ESG reporting and help companies track sustainability performance",
     ],
   },
   {
