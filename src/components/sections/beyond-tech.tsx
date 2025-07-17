@@ -13,6 +13,7 @@ import Container from '@/components/layout/container';
 import Typography from '@/components/general/typography';
 import Link from '@/components/navigation/link';
 import Tag from '@/components/data-display/tag';
+import { MdShuffle } from 'react-icons/md';
 
 const images = [
   { src: Guitar, alt: 'Guitar' },
@@ -44,9 +45,26 @@ const timelineData = [
   }
 ];
 
+const whatShapesMe = [
+  {
+    tag: { label: 'Caregiver', className: 'bg-blue-100 text-blue-800' },
+    text: 
+      "supporting my neurodivergent brother's growth",
+  },
+  {
+    tag: { label: 'World Traveler', className: 'bg-green-100 text-green-800' },
+    text: 'visited 65 countries across all seven continents',
+  },
+  {
+    tag: { label: 'Wave Chaser', className: 'bg-cyan-100 text-cyan-800' },
+    text: 'swimmer, surfer, lifeguard, and water polo player',
+  },
+];
+
 const AboutMeSection = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showAll, setShowAll] = useState(false);
+  const [currentShapeIndex, setCurrentShapeIndex] = useState(0);
 
   const renderText = (text: string) => {
     if (text.includes('Surf&apos;s Down')) {
@@ -95,10 +113,10 @@ const AboutMeSection = () => {
   return (
     <Container id="beyond">
       <SectionHeader label="Beyond Tech" />
-
-      <div className="flex w-full flex-col justify-between gap-12 md:flex-row">
-        {/* Image */}
-        <div className="flex justify-center md:order-first md:justify-end">
+      <div className="flex w-full flex-col gap-12 md:flex-row md:items-start md:justify-between">
+        {/* Left: Carousel only */}
+        <div className="flex flex-col items-center md:w-1/2 md:items-end md:pr-8 gap-8">
+          {/* Image Carousel */}
           <div className="relative h-[380px] w-[320px] md:h-[460px] md:w-[380px] lg:h-[520px] lg:w-[440px]">
             {images.map((image, index) => (
               <Image
@@ -125,23 +143,84 @@ const AboutMeSection = () => {
           </div>
         </div>
 
-        {/* Timeline */}
-        <div className="flex max-w-xl flex-col gap-4">
-          <Typography variant="h3" className="mb-1">What Shapes Me</Typography>
-          <div className="flex flex-col gap-3">
-            <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100 transition-all duration-300 hover:scale-[1.02] hover:shadow-md hover:bg-gray-75 cursor-pointer">
-              <Tag label="Caregiver" className="bg-blue-100 text-blue-800" />
-              <Typography className="text-sm">supporting my neurodivergent brother&apos;s growth</Typography>
+        {/* Right: What Shapes Me (single card) + Timeline */}
+        <div className="flex max-w-xl flex-col gap-4 md:w-1/2">
+          {/* What Shapes Me (Stacked Cards Carousel) */}
+          <div className="w-full flex flex-col gap-4">
+            <Typography variant="h3" className="mb-1">What Shapes Me</Typography>
+            
+            {/* Stacked Cards Container */}
+            <div className="relative h-32 flex items-center justify-center perspective-1000">
+              {whatShapesMe.map((item, index) => {
+                const isActive = index === currentShapeIndex;
+                const isNext = index === (currentShapeIndex + 1) % whatShapesMe.length;
+                const isPrev = index === (currentShapeIndex - 1 + whatShapesMe.length) % whatShapesMe.length;
+                
+                let transform = '';
+                let opacity = 0;
+                let zIndex = 0;
+                
+                if (isActive) {
+                  transform = 'translateY(0) scale(1) rotateY(0deg)';
+                  opacity = 1;
+                  zIndex = 30;
+                } else if (isNext) {
+                  transform = 'translateY(20px) scale(0.9) rotateY(15deg)';
+                  opacity = 0.7;
+                  zIndex = 20;
+                } else if (isPrev) {
+                  transform = 'translateY(-20px) scale(0.9) rotateY(-15deg)';
+                  opacity = 0.7;
+                  zIndex = 20;
+                } else {
+                  transform = 'translateY(40px) scale(0.8) rotateY(30deg)';
+                  opacity = 0.3;
+                  zIndex = 10;
+                }
+                
+                return (
+                  <div
+                    key={index}
+                    className="absolute w-full max-w-lg cursor-pointer"
+                    style={{
+                      transform,
+                      opacity,
+                      zIndex,
+                      transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
+                    }}
+                    onClick={() => setCurrentShapeIndex(index)}
+                  >
+                    <div className="bg-gray-50 dark:bg-gray-100 rounded-xl shadow-md dark:shadow-2xl p-4 transform-gpu hover:shadow-lg transition-all duration-300">
+                      <div className="flex items-center gap-3">
+                        <Tag label={item.tag.label} className={item.tag.className} />
+                        <Typography className="text-sm text-gray-700 dark:text-gray-300">
+                          {item.text}
+                        </Typography>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+
+              {/* Shuffle Button */}
+              <button
+                onClick={() => {
+                  let newIndex;
+                  do {
+                    newIndex = Math.floor(Math.random() * whatShapesMe.length);
+                  } while (newIndex === currentShapeIndex && whatShapesMe.length > 1);
+                  setCurrentShapeIndex(newIndex);
+                }}
+                className="absolute right-[-10px] top-1/2 -translate-y-1/2 group w-8 h-8 bg-gray-300 hover:bg-gray-400 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-200 hover:scale-110 z-40"
+              >
+                <MdShuffle size={18} className="text-gray-800" />
+              </button>
             </div>
-            <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100 transition-all duration-300 hover:scale-[1.02] hover:shadow-md hover:bg-gray-75 cursor-pointer">
-              <Tag label="World Traveler" className="bg-green-100 text-green-800" />
-              <Typography className="text-sm">visited 65 countries across all seven continents</Typography>
-            </div>
-            <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100 transition-all duration-300 hover:scale-[1.02] hover:shadow-md hover:bg-gray-75 cursor-pointer">
-              <Tag label="Wave Chaser" className="bg-cyan-100 text-cyan-800" />
-              <Typography className="text-sm">swimmer, surfer, lifeguard, and water polo player</Typography>
-            </div>
+
+            {/* Indicator Dots */}
+            {/* Removed indicator dots as requested */}
           </div>
+          {/* Timeline */}
           <Typography variant="h3" className="mt-4 mb-1">Recent Experiences</Typography>
           <div className="relative">
             {/* Timeline items */}

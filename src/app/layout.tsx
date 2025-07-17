@@ -8,9 +8,6 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Cam Keller",
-  icons: {
-    icon: "/favicon.ico",
-  },
 };
 
 export default function RootLayout({
@@ -20,6 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="!scroll-smooth" suppressHydrationWarning>
+      <head>
+        <meta name="apple-mobile-web-app-title" content="Cam Keller" />
+      </head>
       <body className={`${inter.className} bg-gray text-gray-600 antialiased`}>
         <Providers>
           <Header />
