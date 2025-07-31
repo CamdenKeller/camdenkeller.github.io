@@ -25,8 +25,6 @@ import GCP from "/public/images/icons/gcp.png";
 import Jupyter from "/public/images/icons/jupyter.png";
 import HTMLCSSJavaScript from "/public/images/icons/htmlcssjavascript.png";
 
-
-
 import LogoSeaBridge from "/public/images/logos/logo-seabridge-sustainability.jpeg";
 import LogoGreenClub from "/public/images/logos/logo-greenclub.png";
 import LogoLifeguard from "/public/images/logos/logo-lifeguard.png";
@@ -38,13 +36,7 @@ import BigRedBeli2 from "/public/images/projects/big-red-beli-dark-2.svg";
 import GymCrowd1 from "/public/images/projects/gymcrowd-1.svg";
 import GymCrowd2 from "/public/images/projects/gymcrowd-2.svg";
 
-
-
-import {
-  ExperienceDetails,
-  ProjectDetails,
-  TechDetails,  
-} from "@/lib/types";
+import { ExperienceDetails, ProjectDetails, TechDetails } from "@/lib/types";
 
 export const NAV_LINKS = [
   // {
@@ -95,7 +87,7 @@ export const LANGUAGES: TechDetails[] = [
     logo: Java,
     url: "https://www.java.com/en/",
   },
-  {   
+  {
     label: "SQL",
     logo: SQL,
     url: "https://www.geeksforgeeks.org/sql/sql-tutorial/",
@@ -193,7 +185,6 @@ export const TOOLS_PLATFORMS: TechDetails[] = [
   //   logo: Jupyter,
   //   url: "https://jupyter.org/",
   // },
-
 ];
 
 export const EXPERIENCES: ExperienceDetails[] = [
@@ -204,7 +195,7 @@ export const EXPERIENCES: ExperienceDetails[] = [
     startDate: new Date(2025, 4),
     currentlyWorkHere: true,
     summary: [
-      "Co-leading a team building AI tools that automate ESG reporting and help companies track sustainability performance",
+      "Co-led development of an an enterprise RAG application to automate ESG reporting and track sustainability performance",
     ],
   },
   {
@@ -224,7 +215,7 @@ export const EXPERIENCES: ExperienceDetails[] = [
     startDate: new Date(2024, 4),
     endDate: new Date(2024, 7),
     summary: [
-      "Protected thousands of beachgoers each day and mentored younger team members in safety, teamwork, and leadership",
+      "Safeguarded thousands of beachgoers daily and mentored junior lifeguards in rescue skills and teamwork",
     ],
   },
 ];
@@ -282,9 +273,9 @@ export const PROJECTS: ProjectDetails[] = [
     technologies: [
       "Python",
       "Model-View-Controller",
-      "JSON Parsing", 
+      "JSON Parsing",
       "Vectors",
-      "Kivy", 
+      "Kivy",
     ],
   },
 ];
