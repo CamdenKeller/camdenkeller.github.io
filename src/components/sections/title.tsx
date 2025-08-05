@@ -28,7 +28,7 @@ const TitleSection = () => {
           <div className="flex flex-col gap-2">
             <Typography variant="h1">
               <span className="bg-gradient-to-r from-blue-800 via-blue-600 to-blue-300 bg-clip-text text-transparent animate-pulse-wave">
-                Hi! I'm Cam
+                Hi! I&apos;m Cam
               </span>{" "}
               <span className="inline-block animate-[slide-in-from-right_2.5s_ease-out_forwards] align-middle">
                 <Image src={Wave} alt="Wave" width={48} height={48} className="inline-block align-middle" priority />
