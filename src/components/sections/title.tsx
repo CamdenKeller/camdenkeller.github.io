@@ -27,13 +27,16 @@ const TitleSection = () => {
         <div className="flex max-w-3xl flex-grow flex-col justify-center gap-8 md:order-first md:items-start md:justify-center 2xl:gap-12">
           <div className="flex flex-col gap-2">
             <Typography variant="h1">
-              Hi! My name is Cam{" "}
-              <span className="inline-block animate-[slide-in-from-right_2s_ease-out_forwards] align-middle">
+              <span className="bg-gradient-to-r from-blue-800 via-blue-600 to-blue-300 bg-clip-text text-transparent animate-pulse-wave">
+                Hi! I'm Cam
+              </span>{" "}
+              <span className="inline-block animate-[slide-in-from-right_2.5s_ease-out_forwards] align-middle">
                 <Image src={Wave} alt="Wave" width={48} height={48} className="inline-block align-middle" priority />
               </span>
             </Typography>
+            <div className="h-1 w-16 bg-gradient-to-r from-blue-800 to-blue-300 rounded-full"></div>
             <Typography>
-            I&apos;m a sophomore at Cornell University majoring in Computer Science and Cognitive Science, 
+            Sophomore at Cornell University majoring in Computer Science and Cognitive Science, 
             with a passion for using technology to tackle environmental and social challenges. 
             Please take a look around to explore my projects, skills, and experiences.
             </Typography>
