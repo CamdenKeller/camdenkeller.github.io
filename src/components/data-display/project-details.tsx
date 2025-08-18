@@ -41,7 +41,7 @@ const ProjectDetails = ({
   };
 
   return (
-    <Card className="mx-auto flex w-full max-w-6xl flex-col md:flex-row">
+    <Card className="mx-auto flex w-full max-w-6xl flex-col md:flex-row transition-all duration-300 hover:shadow-lg hover:scale-[1.02]">
       {/* Image */}
       <div
         className={mergeClasses(
@@ -55,13 +55,13 @@ const ProjectDetails = ({
           <>
             <button
               onClick={prevImage}
-              className="absolute left-0 top-1/2 translate-x-1 -translate-y-1/2 z-10 bg-gray-300 hover:bg-gray-400 rounded-full p-1.5 shadow-md transition-all duration-200 hover:shadow-lg"
+              className="absolute left-0 top-1/2 translate-x-1 -translate-y-1/2 z-10 bg-gray-300 hover:bg-gray-400 rounded-full p-1.5 shadow-md transition-all duration-200 hover:shadow-lg hover:scale-110"
             >
               <ChevronLeft className="w-4 h-4 text-gray-800" />
             </button>
             <button
               onClick={nextImage}
-              className="absolute right-0 top-1/2 -translate-x-1 -translate-y-1/2 z-10 bg-gray-300 hover:bg-gray-400 rounded-full p-1.5 shadow-md transition-all duration-200 hover:shadow-lg"
+              className="absolute right-0 top-1/2 -translate-x-1 -translate-y-1/2 z-10 bg-gray-300 hover:bg-gray-400 rounded-full p-1.5 shadow-md transition-all duration-200 hover:shadow-lg hover:scale-110"
             >
               <ChevronRight className="w-4 h-4 text-gray-800" />
             </button>
@@ -86,7 +86,7 @@ const ProjectDetails = ({
           <Image
             src={allImages[currentImageIndex]}
             alt={`${name} preview ${currentImageIndex + 1}`}
-            className="h-[300px] w-auto transition-opacity duration-300 rounded-xl"
+            className="h-[300px] w-auto transition-all duration-300 rounded-xl hover:scale-105"
             style={{ objectFit: 'contain' }}
           />
         </div>
@@ -112,7 +112,7 @@ const ProjectDetails = ({
           <Link
             href={url}
             noCustomization
-            className="self-start rounded-lg p-1.5 hover:bg-gray-50 [&_svg]:stroke-gray-500"
+            className="self-start rounded-lg p-1.5 hover:bg-gray-50 [&_svg]:stroke-gray-500 transition-all duration-200 hover:scale-110"
             externalLink
           >
             <ExternalLink />

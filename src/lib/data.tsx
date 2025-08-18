@@ -254,7 +254,7 @@ export const PROJECTS: ProjectDetails[] = [
     name: "GymCrowd – Android Developer",
     description:
       "A real-time gym tracker to help students avoid peak hours through live occupancy updates",
-    url: "#",
+    url: "https://github.com/CamdenKeller/GymCrowd",
     previewImage: GymCrowd1,
     additionalImages: [GymCrowd2],
     technologies: [

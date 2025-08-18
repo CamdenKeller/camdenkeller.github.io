@@ -24,7 +24,7 @@ const ExperienceDetails = ({
   };
 
   return (
-    <Card className="mx-auto flex w-full max-w-4xl flex-col justify-between gap-4 p-8 md:flex-row md:gap-8">
+    <Card className="mx-auto flex w-full max-w-4xl flex-col justify-between gap-4 p-8 md:flex-row md:gap-8 transition-all duration-300 hover:shadow-lg hover:scale-[1.01]">
       <div className="max-md:order-1 md:w-1/4">
         {position.includes('SeaBridge Sustainability') ? (
           <a href="https://www.seabridgesustainability.com/services" target="_blank" rel="noopener noreferrer">
@@ -32,7 +32,7 @@ const ExperienceDetails = ({
               src={logo}
               srcForDarkMode={darkModeLogo}
               alt={logoAlt}
-              className="max-w-[120px] transition-transform duration-500 hover:scale-105"
+              className="max-w-[120px] transition-transform duration-300 hover:scale-110"
               width={120}
               height={120}
             />
@@ -43,7 +43,7 @@ const ExperienceDetails = ({
               src={logo}
               srcForDarkMode={darkModeLogo}
               alt={logoAlt}
-              className="max-w-[120px] transition-transform duration-500 hover:scale-105"
+              className="max-w-[120px] transition-transform duration-300 hover:scale-110"
               width={120}
               height={120}
             />
@@ -54,7 +54,7 @@ const ExperienceDetails = ({
               src={logo}
               srcForDarkMode={darkModeLogo}
               alt={logoAlt}
-              className="max-w-[120px] transition-transform duration-500 hover:scale-105"
+              className="max-w-[120px] transition-transform duration-300 hover:scale-110"
               width={120}
               height={120}
             />
@@ -64,7 +64,7 @@ const ExperienceDetails = ({
             src={logo}
             srcForDarkMode={darkModeLogo}
             alt={logoAlt}
-            className="max-w-[120px] transition-transform duration-500 hover:scale-105"
+            className="max-w-[120px] transition-transform duration-300 hover:scale-110"
             width={120}
             height={120}
           />
@@ -89,7 +89,7 @@ const ExperienceDetails = ({
         )}
       </div>
       <div className="max-md:order-2 md:w-1/4">
-        <Typography className="text-gray-700 md:text-right">
+        <Typography className="text-gray-700 md:text-right transition-all duration-200 hover:text-gray-900">
           {new Intl.DateTimeFormat('en-US', dateFormatOptions).format(
             startDate
           )}{' '}
