@@ -6,7 +6,7 @@ const DownloadCV = () => {
   return (
     <Button
       onClick={() =>
-        window?.open('/files/Camden Keller - Resume.pdf', '_blank')
+        window?.open('/files/Camden_Keller_Resume.pdf', '_blank')
       }
     >
       Download Resume

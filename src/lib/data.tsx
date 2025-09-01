@@ -193,9 +193,9 @@ export const EXPERIENCES: ExperienceDetails[] = [
     logoAlt: "SeaBridge logo",
     position: "Software Engineer Intern @ SeaBridge Sustainability",
     startDate: new Date(2025, 4),
-    currentlyWorkHere: true,
+    endDate: new Date(2025, 8),
     summary: [
-      "Co-led development of an an enterprise RAG application to automate ESG reporting and track sustainability performance",
+      "Co-led development of enterprise RAG platform MVP automating ESG reporting with LangGraph AI agents and a scalable AWS data pipeline",
     ],
   },
   {
@@ -205,7 +205,7 @@ export const EXPERIENCES: ExperienceDetails[] = [
     startDate: new Date(2025, 1),
     currentlyWorkHere: true,
     summary: [
-      "Built frontend for carbon-cutting routing tool and led a design process grounded in real user needs",
+      "Built platform for carbon-cutting routing tool and led a design process grounded in stakeholder needs",
     ],
   },
   {

@@ -104,13 +104,16 @@ const ContactSection = () => {
       <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12">
         {/* Image */}
         <div className="hidden lg:flex items-center justify-center">
-          <div className="relative h-[380px] w-[320px] md:h-[460px] md:w-[380px] lg:h-[520px] lg:w-[440px]">
+          <div 
+            className="relative h-[380px] w-[320px] md:h-[460px] md:w-[380px] lg:h-[520px] lg:w-[440px]"
+          >
+            
             {contactImages.map((image, index) => (
               <Image
                 key={index}
                 src={image}
                 alt={`Cam ${index + 1}`}
-                className={`absolute z-10 h-[360px] w-[280px] border-8 border-gray-50 max-md:left-5 md:left-0 md:top-0 md:h-[420px] md:w-[340px] lg:h-[480px] lg:w-[400px] transition-opacity duration-[2000ms] ease-in-out ${
+                className={`absolute z-10 h-[360px] w-[280px] border-8 border-gray-50 max-md:left-5 md:left-0 md:top-0 md:h-[420px] md:w-[340px] lg:h-[480px] lg:w-[400px] transition-opacity duration-[2000ms] ease-in-out cursor-pointer ${
                   index === currentImageIndex ? 'opacity-100' : 'opacity-0'
                 }`}
                 style={{ objectFit: 'cover' }}
@@ -122,10 +125,11 @@ const ContactSection = () => {
                 key={index}
                 src={image}
                 alt={`Cam ${index + 1}`}
-                className={`absolute h-[360px] w-[320px] border-8 border-transparent max-md:top-5 md:bottom-0 md:right-0 md:h-[420px] md:w-[340px] lg:h-[480px] lg:w-[400px] transition-opacity duration-[2000ms] ease-in-out ${
+                className={`absolute h-[360px] w-[320px] border-8 border-transparent max-md:top-5 md:bottom-0 md:right-0 md:h-[420px] md:w-[340px] lg:h-[480px] lg:w-[400px] transition-opacity duration-[2000ms] ease-in-out cursor-pointer ${
                   index === nextImageIndex ? 'opacity-100' : 'opacity-0'
                 }`}
                 style={{ objectFit: 'cover' }}
+                onClick={() => handleImageClick(index)}
               />
             ))}
           </div>

@@ -36,8 +36,7 @@ const TitleSection = () => {
             </Typography>
             <div className="h-1 w-16 bg-gradient-to-r from-blue-800 to-blue-300 rounded-full"></div>
             <Typography>
-            Sophomore at Cornell University majoring in Computer Science and Cognitive Science, 
-            with a passion for using technology to tackle environmental and social challenges. 
+            Sophomore at Cornell University double-majoring in Computer Science and Cognitive Science, passionate about applying technology to address environmental and social challenges.
             Please take a look around to explore my projects, skills, and experiences.
             </Typography>
           </div>

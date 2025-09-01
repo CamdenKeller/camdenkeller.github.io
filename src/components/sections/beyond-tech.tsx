@@ -110,6 +110,10 @@ const AboutMeSection = () => {
 
   const nextImageIndex = (currentImageIndex + 1) % images.length;
 
+  const handleImageClick = (index: number) => {
+    setCurrentImageIndex(index);
+  };
+
   return (
     <Container id="beyond">
       <SectionHeader label="Beyond Tech" />
@@ -117,16 +121,20 @@ const AboutMeSection = () => {
         {/* Left: Carousel only */}
         <div className="flex flex-col items-center md:w-1/2 md:items-end md:pr-8 gap-8">
           {/* Image Carousel */}
-          <div className="relative h-[380px] w-[320px] md:h-[460px] md:w-[380px] lg:h-[520px] lg:w-[440px]">
+          <div 
+            className="relative h-[380px] w-[320px] md:h-[460px] md:w-[380px] lg:h-[520px] lg:w-[440px]"
+          >
+            
             {images.map((image, index) => (
               <Image
                 key={index}
                 src={image.src}
                 alt={image.alt}
-                className={`absolute z-10 h-[360px] w-[280px] border-8 border-gray-50 max-md:left-5 md:right-0 md:top-0 md:h-[420px] md:w-[340px] lg:h-[480px] lg:w-[400px] transition-opacity duration-[2000ms] ease-in-out ${
+                className={`absolute z-10 h-[360px] w-[280px] border-8 border-gray-50 max-md:left-5 md:right-0 md:top-0 md:h-[420px] md:w-[340px] lg:h-[480px] lg:w-[400px] transition-opacity duration-[2000ms] ease-in-out cursor-pointer ${
                   index === currentImageIndex ? 'opacity-100' : 'opacity-0'
                 }`}
                 style={{ objectFit: 'cover' }}
+                onClick={() => handleImageClick(index)}
               />
             ))}
             {images.map((image, index) => (
@@ -134,13 +142,15 @@ const AboutMeSection = () => {
                 key={index}
                 src={image.src}
                 alt={image.alt}
-                className={`absolute h-[360px] w-[320px] border-8 border-transparent max-md:top-5 md:bottom-0 md:left-0 md:h-[420px] md:w-[340px] lg:h-[480px] lg:w-[400px] transition-opacity duration-[2000ms] ease-in-out ${
+                className={`absolute h-[360px] w-[320px] border-8 border-transparent max-md:top-5 md:bottom-0 md:left-0 md:h-[420px] md:w-[340px] lg:h-[480px] lg:w-[400px] transition-opacity duration-[2000ms] ease-in-out cursor-pointer ${
                   index === nextImageIndex ? 'opacity-100' : 'opacity-0'
                 }`}
                 style={{ objectFit: 'cover' }}
+                onClick={() => handleImageClick(index)}
               />
             ))}
           </div>
+          
         </div>
 
         {/* Right: What Shapes Me (single card) + Timeline */}
@@ -193,7 +203,7 @@ const AboutMeSection = () => {
                     <div className="bg-gray-50 dark:bg-gray-100 rounded-xl shadow-md dark:shadow-2xl p-4 transform-gpu hover:shadow-lg transition-all duration-300">
                       <div className="flex items-center gap-3">
                         <Tag label={item.tag.label} className={item.tag.className} />
-                        <Typography className="text-sm text-gray-700 dark:text-gray-300">
+                        <Typography className="text-sm text-gray-700 dark:text-white">
                           {item.text}
                         </Typography>
                       </div>
