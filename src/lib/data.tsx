@@ -28,6 +28,7 @@ import HTMLCSSJavaScript from "/public/images/icons/htmlcssjavascript.png";
 import LogoSeaBridge from "/public/images/logos/logo-seabridge-sustainability.jpeg";
 import LogoGreenClub from "/public/images/logos/logo-greenclub.png";
 import LogoLifeguard from "/public/images/logos/logo-lifeguard.png";
+import LogoCMSX from "/public/images/logos/logo-cmsx.png";
 
 import PacMan from "/public/images/projects/pac-man.png";
 import Asteroids from "/public/images/projects/asteroids.svg";
@@ -189,9 +190,21 @@ export const TOOLS_PLATFORMS: TechDetails[] = [
 
 export const EXPERIENCES: ExperienceDetails[] = [
   {
+    logo: LogoCMSX,
+    logoAlt: "CMSX logo",
+    company: "CMSX",
+    position: "Software Engineer",
+    startDate: new Date(2025, 8),
+    currentlyWorkHere: true,
+    summary: [
+      "Develop Cornell's official course management system supporting 8,000+ students across 140+ courses",
+    ],
+  },
+  {
     logo: LogoSeaBridge,
     logoAlt: "SeaBridge logo",
-    position: "Software Engineer Intern @ SeaBridge Sustainability",
+    company: "SeaBridge Sustainability",
+    position: "Software Engineer Intern",
     startDate: new Date(2025, 4),
     endDate: new Date(2025, 8),
     summary: [
@@ -200,8 +213,9 @@ export const EXPERIENCES: ExperienceDetails[] = [
   },
   {
     logo: LogoGreenClub,
-    logoAlt: "SeaBridge logo",
-    position: "Software Developer @ Cornell GreenClub",
+    logoAlt: "GreenClub logo",
+    company: "Cornell GreenClub",
+    position: "Software Developer",
     startDate: new Date(2025, 1),
     currentlyWorkHere: true,
     summary: [

@@ -14,6 +14,7 @@ const ExperienceDetails = ({
   darkModeLogo,
   logoAlt,
   position,
+  company,
   currentlyWorkHere,
   startDate,
   endDate,
@@ -26,7 +27,7 @@ const ExperienceDetails = ({
   return (
     <Card className="mx-auto flex w-full max-w-4xl flex-col justify-between gap-4 p-8 md:flex-row md:gap-8 transition-all duration-300 hover:shadow-lg hover:scale-[1.01]">
       <div className="max-md:order-1 md:w-1/4">
-        {position.includes('SeaBridge Sustainability') ? (
+        {(company === 'SeaBridge Sustainability' || position.includes('SeaBridge Sustainability')) ? (
           <a href="https://www.seabridgesustainability.com/services" target="_blank" rel="noopener noreferrer">
             <ImageWrapper
               src={logo}
@@ -48,8 +49,19 @@ const ExperienceDetails = ({
               height={120}
             />
           </a>
-        ) : position.includes('GreenClub') ? (
+        ) : (company === 'Cornell GreenClub' || position.includes('GreenClub')) ? (
           <a href="https://www.joingreenclub.com/" target="_blank" rel="noopener noreferrer">
+            <ImageWrapper
+              src={logo}
+              srcForDarkMode={darkModeLogo}
+              alt={logoAlt}
+              className="max-w-[120px] transition-transform duration-300 hover:scale-110"
+              width={120}
+              height={120}
+            />
+          </a>
+        ) : (company === 'CMSX' || position.includes('CMSX')) ? (
+          <a href="https://www.cs.cornell.edu/projects/cms/cmsx/" target="_blank" rel="noopener noreferrer">
             <ImageWrapper
               src={logo}
               srcForDarkMode={darkModeLogo}
@@ -71,10 +83,21 @@ const ExperienceDetails = ({
         )}
       </div>
       <div className="flex flex-col gap-4 max-md:order-3 md:w-2/4">
-        <div className="flex items-center gap-2">
-          <Typography variant="subtitle" className="font-semibold text-gray-900">
-            {position}
-          </Typography>
+        <div className="flex flex-col">
+          {company ? (
+            <>
+              <Typography variant="subtitle" className="font-semibold text-gray-900">
+                {company}
+              </Typography>
+              <Typography className="text-gray-700 italic">
+                {position}
+              </Typography>
+            </>
+          ) : (
+            <Typography variant="subtitle" className="font-semibold text-gray-900">
+              {position}
+            </Typography>
+          )}
         </div>
         {summary && summary.length === 1 ? (
           <Typography>{renderText(summary[0])}</Typography>
