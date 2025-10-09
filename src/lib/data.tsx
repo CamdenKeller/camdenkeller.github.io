@@ -28,7 +28,7 @@ import HTMLCSSJavaScript from "/public/images/icons/htmlcssjavascript.png";
 import LogoSeaBridge from "/public/images/logos/logo-seabridge-sustainability.jpeg";
 import LogoGreenClub from "/public/images/logos/logo-greenclub.png";
 import LogoLifeguard from "/public/images/logos/logo-lifeguard.png";
-import LogoCMSX from "/public/images/logos/logo-cmsx.png";
+import LogoCMSX from "/public/images/logos/logo-cmsx.svg";
 
 import PacMan from "/public/images/projects/pac-man.png";
 import Asteroids from "/public/images/projects/asteroids.svg";
