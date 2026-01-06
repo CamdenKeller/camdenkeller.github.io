@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 import BviGreenhouse from '/public/images/beyond_tech/bvi_greenhouse.jpeg';
-import MachuPicchu from '/public/images/beyond_tech/machu_picchu.png';
+import MachuPicchu from '/public/images/beyond_tech/machu_picchu.jpg';
 import Lifeguarding from '/public/images/beyond_tech/lifeguarding.jpg';
 import Guitar from '/public/images/beyond_tech/guitar.jpg';
 
