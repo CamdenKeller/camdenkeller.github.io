@@ -21,6 +21,8 @@ export type ExperienceDetails = {
   endDate?: Date;
   summary: string[];
   url?: string;
+  logoUrl?: string;
+  secondaryLogoUrl?: string;
 };
 
 export type ProjectDetails = {
@@ -28,6 +30,8 @@ export type ProjectDetails = {
   description: string | string[];
   dates?: string;
   url?: string;
+  githubUrl?: string;
+  youtubeUrl?: string;
   previewImage: string | StaticImageData;
   darkModePreviewImage?: string | StaticImageData;
   additionalImages?: (string | StaticImageData)[];

@@ -35,7 +35,7 @@ const timelineData = [
   },
   {
     year: '2023',
-    title: 'Band Leader',
+    title: 'Musician',
     description: 'Wrote, produced, and marketed "Statements of Intent", a full-length music album with 1,000+ streams',
   },
   {
@@ -45,7 +45,7 @@ const timelineData = [
   },
   {
     year: '2021',
-    title: 'BVI Volunteer',
+    title: 'Volunteer',
     description: 'Supported marine restoration, field research, and hurricane relief efforts in the British Virgin Islands',
   }
 ];

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ExternalLink, ChevronLeft, ChevronRight, Github, Youtube } from 'lucide-react';
 
 import { ProjectDetails as ProjectDetailsType } from '@/lib/types';
 import { mergeClasses } from '@/lib/utils';
@@ -22,6 +22,8 @@ const ProjectDetails = ({
   dates,
   technologies,
   url,
+  githubUrl,
+  youtubeUrl,
   previewImage,
   additionalImages,
   layoutType = 'default',
@@ -127,16 +129,38 @@ const ProjectDetails = ({
             <Tag key={index} label={technology} />
           ))}
         </div>
-        {url && (
-          <Link
-            href={url}
-            noCustomization
-            className="self-start rounded-lg p-1.5 hover:bg-gray-50 [&_svg]:stroke-gray-500 transition-all duration-200 hover:scale-110"
-            externalLink
-          >
-            <ExternalLink />
-          </Link>
-        )}
+        <div className="flex gap-2 items-center">
+          {githubUrl && (
+            <Link
+              href={githubUrl}
+              noCustomization
+              className="self-start rounded-lg p-1.5 hover:bg-gray-50 [&_svg]:stroke-gray-500 transition-all duration-200 hover:scale-110"
+              externalLink
+            >
+              <Github className="w-5 h-5 text-gray-600 hover:text-gray-900" />
+            </Link>
+          )}
+          {youtubeUrl && (
+            <Link
+              href={youtubeUrl}
+              noCustomization
+              className="self-start rounded-lg p-1.5 hover:bg-gray-50 [&_svg]:stroke-gray-500 transition-all duration-200 hover:scale-110"
+              externalLink
+            >
+              <Youtube className="w-5 h-5 text-gray-600 hover:text-gray-900" />
+            </Link>
+          )}
+          {url && (
+            <Link
+              href={url}
+              noCustomization
+              className="self-start rounded-lg p-1.5 hover:bg-gray-50 [&_svg]:stroke-gray-500 transition-all duration-200 hover:scale-110"
+              externalLink
+            >
+              <ExternalLink className="w-5 h-5 text-gray-600 hover:text-gray-900" />
+            </Link>
+          )}
+        </div>
       </div>
     </Card>
   );
