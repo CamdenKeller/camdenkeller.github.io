@@ -10,7 +10,7 @@ const ProjectSection = () => {
 
   return (
     <Container id="projects" className="bg-gray-50">
-      <SectionHeader label="Projects" />
+      <SectionHeader label="Technical Projects" />
 
       {visibleProjects.map((project, index) => (
         <ProjectDetails

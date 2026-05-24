@@ -46,6 +46,9 @@ import BigRedBeli2 from "/public/images/projects/big-red-beli-dark-2.svg";
 import GymCrowd1 from "/public/images/projects/gymcrowd-1.svg";
 import GymCrowd2 from "/public/images/projects/gymcrowd-2.svg";
 import FillerProject from "/public/images/projects/filler.svg";
+import TerminalTok1 from "/public/images/projects/terminaltok1.png";
+import TerminalTok2 from "/public/images/projects/terminaltok2.png";
+import TerminalTok3 from "/public/images/projects/terminaltok3.png";
 
 import { ExperienceDetails, ProjectDetails, TechDetails } from "@/lib/types";
 
@@ -283,8 +286,9 @@ export const PROJECTS: ProjectDetails[] = [
   {
     name: "TerminalTok",
     dates: "Nov 2025 – Dec 2025",
-    description: "A real-time terminal-based social platform that lets users send messages, stream media, and receive personalized content recommendations.",
-    previewImage: FillerProject,
+    description: "A terminal-based social platform enabling live messaging, media streaming, and personalized content recommendations.",
+    previewImage: TerminalTok1,
+    additionalImages: [TerminalTok2, TerminalTok3],
     url: "https://www.youtube.com/watch?v=JJSdvPSbKjI",
     technologies: [
       "OCaml",
@@ -297,7 +301,7 @@ export const PROJECTS: ProjectDetails[] = [
   {
     name: "Big Red Beli",
     dates: "Apr 2025 – May 2025",
-    description: "A dining review application backend that lets users search and review local restaurants with optimized response times.",
+    description: "A dining review backend enabling users to review Cornell Dining.",
     url: "https://github.com/lshen0/hack-challenge#",
     previewImage: BigRedBeli1,
     additionalImages: [BigRedBeli2],
@@ -314,29 +318,42 @@ export const PROJECTS: ProjectDetails[] = [
   {
     name: "Pac-Man",
     dates: "Apr 2025 – May 2025",
-    description: "A classic Pac-Man game simulation showcasing intelligent, real-time pathfinding ghosts designed to systematically track down the player.",
+    description: "A Pac-Man game simulation featuring intelligent real-time ghost pathfinding.",
     previewImage: PacMan,
     technologies: [
       "Java",
       "Swing",
       "AI Pathfinding",
-      "Dijkstra's Algorithm",
+      "Dijkstra’s Algorithm",
       "Priority Queue",
       "Simulation Testing",
     ],
   },
   {
+    name: "GymCrowd",
+    dates: "Oct 2024 – Dec 2024",
+    description: "An Android application providing real-time gym occupancy and capacity updates to improve the Cornell gym experience.",
+    previewImage: GymCrowd1,
+    additionalImages: [GymCrowd2],
+    technologies: [
+      "Kotlin",
+      "Jetpack Compose",
+      "Android SDK",
+      "MVVM Architecture",
+      "API Integration",
+    ],
+  },
+  {
     name: "Asteroids",
     dates: "Oct 2024 – Nov 2024",
-    description: "An interactive space arcade game where players pilot a spaceship, dodge and shoot incoming asteroids, and rack up high scores.",
+    description: "An interactive arcade-style space shooter where players pilot a spaceship, evade asteroids, and compete for high scores.",
     previewImage: Asteroids,
     technologies: [
-      "Python",
-      "Game Loop",
-      "Physics Engine",
-      "Sound Effects",
-      "Animations",
-      "MVC Architecture",
+      "Java",
+      "Game Development",
+      "Object-Oriented Programming",
+      "Collision Detection",
+      "Event-Driven Programming",
     ],
   },
 ];

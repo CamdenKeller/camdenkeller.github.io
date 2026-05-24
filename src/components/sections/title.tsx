@@ -1,25 +1,72 @@
+'use client';
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { MapPin } from "lucide-react";
 
-import CamHeadshot from "/public/images/headshot.jpg";
+import Headshot1 from "/public/images/headshots/headshot1.jpg";
+import Headshot2 from "/public/images/headshots/headshot2.jpg";
+import Headshot3 from "/public/images/headshots/headshot3.jpg";
+import Headshot4 from "/public/images/headshots/headshot4.png";
 import Wave from "/public/images/wave.png";
 import SocialIcons from "@/components/data-display/social-icons";
 import Typography from "@/components/general/typography";
 import Container from "@/components/layout/container";
 
+const images = [
+  { src: Headshot1, alt: "Headshot of Cam 1" },
+  { src: Headshot2, alt: "Headshot of Cam 2" },
+  { src: Headshot3, alt: "Headshot of Cam 3" },
+  { src: Headshot4, alt: "Headshot of Cam 4" },
+];
+
 const TitleSection = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 7000);
+
+    return () => clearInterval(interval);
+  }, [currentImageIndex]);
+
+  const nextImageIndex = (currentImageIndex + 1) % images.length;
+
+  const handleImageClick = (index: number) => {
+    setCurrentImageIndex(index);
+  };
+
   return (
     <Container id="home">
       <div className="flex flex-col gap-12 md:flex-row">
         {/* Image */}
         <div className="flex items-center justify-center md:order-last md:flex-grow md:justify-end">
           <div className="relative h-[300px] w-[280px] md:h-[360px] md:w-[320px]">
-            <Image
-              src={CamHeadshot}
-              alt="Headshot of Cam"
-              className="absolute z-10 h-[280px] w-[240px] border-8 border-gray max-md:left-5 md:left-0 md:top-0 md:h-[320px] md:w-[280px]"
-              style={{ objectFit: "cover" }}
-            />
+            {images.map((image, index) => (
+              <Image
+                key={index}
+                src={image.src}
+                alt={image.alt}
+                className={`absolute z-10 h-[280px] w-[240px] border-8 border-gray max-md:left-5 md:left-0 md:top-0 md:h-[320px] md:w-[280px] shadow-md dark:shadow-2xl transition-opacity duration-[2000ms] ease-in-out ${
+                  index === currentImageIndex ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                }`}
+                style={{ objectFit: "cover" }}
+                priority={index === 0}
+              />
+            ))}
+            {images.map((image, index) => (
+              <Image
+                key={index}
+                src={image.src}
+                alt={image.alt}
+                className={`absolute h-[280px] w-[240px] border-8 border-transparent max-md:top-5 max-md:left-10 md:bottom-0 md:right-0 md:h-[320px] md:w-[280px] transition-opacity duration-[2000ms] ease-in-out cursor-pointer ${
+                  index === nextImageIndex ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                }`}
+                style={{ objectFit: "cover" }}
+                onClick={() => handleImageClick(index)}
+              />
+            ))}
           </div>
         </div>
 
@@ -36,7 +83,7 @@ const TitleSection = () => {
             </Typography>
             <div className="h-1 w-16 bg-gradient-to-r from-blue-800 to-blue-300 rounded-full"></div>
             <Typography>
-              Incoming Junior at Cornell University double-majoring in Computer Science and Cognitive Science, passionate about applying technology to address environmental and social challenges.
+              Incoming Junior at Cornell University double-majoring in Computer Science and Cognitive Science. I&apos;m passionate about applying technology to address environmental and social challenges.
               Please take a look around to explore my projects, skills, and experiences.
             </Typography>
           </div>
@@ -61,7 +108,7 @@ const TitleSection = () => {
                 </span>
               </div>
               <Typography>
-                Excited for new projects and opportunities!
+                Open to new projects and opportunities!
               </Typography>
             </div>
           </div>

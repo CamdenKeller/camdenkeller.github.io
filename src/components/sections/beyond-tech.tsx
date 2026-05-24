@@ -24,6 +24,11 @@ const images = [
 
 const timelineData = [
   {
+    year: '2025',
+    title: 'Athlete',
+    description: 'Led the Cornell Men\'s Water Polo team as Captain and named NY State MVP',
+  },
+  {
     year: '2024',
     title: 'Author',
     description: 'Published "Surf\'s Down", an op-ed on stormwater pollution, read by 51,000 weekly readers',
@@ -35,7 +40,7 @@ const timelineData = [
   },
   {
     year: '2022',
-    title: 'Study Abroad',
+    title: 'Global Scholar',
     description: 'Collaborated on sustainability initiatives while immersed in Costa Rican culture and Spanish language',
   },
   {
@@ -53,7 +58,7 @@ const whatShapesMe = [
   },
   {
     tag: { label: 'World Traveler', className: 'bg-green-100 text-green-800' },
-    text: 'visited 65 countries across all seven continents',
+    text: 'visited 77 countries across all seven continents',
   },
   {
     tag: { label: 'Wave Chaser', className: 'bg-cyan-100 text-cyan-800' },

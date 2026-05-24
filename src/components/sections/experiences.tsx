@@ -11,7 +11,7 @@ const ExperienceSection = () => {
 
   return (
     <Container className="bg-gray-50" id="experiences">
-      <SectionHeader label="Work Experience" />
+      <SectionHeader label="Professional Experience" />
 
       {visibleExperiences?.map((experience, index) => (
         <ExperienceDetails {...experience} key={index} />
