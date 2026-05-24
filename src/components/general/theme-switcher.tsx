@@ -21,7 +21,7 @@ const ThemeSwitcher = () => {
   if (!mounted) {
     return (
       <IconButton>
-        <Sun />
+        <MoonStar />
       </IconButton>
     );
   }

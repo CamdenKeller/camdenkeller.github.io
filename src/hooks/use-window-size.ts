@@ -1,9 +1,12 @@
-import { useLayoutEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 
 type Size = {
   width: number | null;
   height: number | null;
 };
+
+const useIsomorphicLayoutEffect =
+  typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
 export default function useWindowSize() {
   const [size, setSize] = useState<Size>({
@@ -11,7 +14,7 @@ export default function useWindowSize() {
     height: null,
   });
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const handleResize = () => {
       setSize({
         width: window.innerWidth,

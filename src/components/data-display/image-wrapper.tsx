@@ -30,9 +30,7 @@ const ImageWrapper = ({
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
-
-  const finalSrc = theme === 'dark' ? srcForDarkMode || src : src;
+  const finalSrc = (mounted && theme === 'dark') ? srcForDarkMode || src : src;
 
   return (
     <Image

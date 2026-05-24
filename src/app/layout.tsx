@@ -7,7 +7,22 @@ import { Providers } from "@/lib/providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://camkeller.dev"),
   title: "Cam Keller | Software Engineer",
+  description: "Cam Keller is an Incoming Junior at Cornell University double-majoring in Computer Science and Cognitive Science, passionate about software engineering and applying technology to address environmental and social challenges.",
+  keywords: ["Cam Keller", "Software Engineer", "Cornell University", "Portfolio", "Computer Science", "Cognitive Science"],
+  openGraph: {
+    title: "Cam Keller | Software Engineer",
+    description: "Portfolio of Cam Keller, a Cornell Computer Science and Cognitive Science student building scalable systems, cloud infrastructure, and full-stack applications.",
+    url: "https://camkeller.dev",
+    siteName: "Cam Keller Portfolio",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Cam Keller | Software Engineer",
+    description: "Portfolio of Cam Keller, a Cornell Computer Science and Cognitive Science student building scalable systems, cloud infrastructure, and full-stack applications.",
+  },
 };
 
 export default function RootLayout({

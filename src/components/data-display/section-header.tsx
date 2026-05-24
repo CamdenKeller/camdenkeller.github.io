@@ -15,9 +15,10 @@ const SectionHeader = React.forwardRef<HTMLDivElement, SectionHeaderProps>(
           'flex items-center justify-center mb-4',
           className
         )}
+        ref={ref}
         {...props}
       >
-        <Typography variant="h1" className="text-3xl font-semibold text-gray-900">
+        <Typography variant="h2" className="text-3xl font-semibold text-gray-900">
           {label}
         </Typography>
       </div>

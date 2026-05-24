@@ -12,7 +12,7 @@ const TechDetails = ({ url, logo, darkModeLogo, label }: TechDetails) => {
   return (
     <div className="flex flex-col items-center justify-center gap-2 text-center">
       <Link noCustomization href={url} externalLink>
-        <div className="w-[72px]">
+        <div className="w-[72px] h-[72px] flex items-center justify-center">
           {isSvg ? (
             <Image
               src={logo as string}
@@ -34,7 +34,7 @@ const TechDetails = ({ url, logo, darkModeLogo, label }: TechDetails) => {
           )}
         </div>
       </Link>
-      <Typography variant="body1" className="text-center">
+      <Typography variant="body1" className="text-center whitespace-pre-line">
         {label}
       </Typography>
     </div>

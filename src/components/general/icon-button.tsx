@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
 
 import { mergeClasses } from '@/lib/utils';
@@ -23,8 +24,6 @@ export interface IconButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof iconButtonVariants> {
   asChild?: boolean;
-  showTooltip?: boolean;
-  tooltipText?: string;
 }
 
 const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
@@ -33,15 +32,14 @@ const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
       className,
       size,
       asChild = false,
-      showTooltip = false,
-      tooltipText = '',
       children,
       ...props
     },
     ref
   ) => {
+    const Comp = asChild ? Slot : 'button';
     return (
-      <button
+      <Comp
         className={mergeClasses(
           'relative',
           iconButtonVariants({ size }),
@@ -51,12 +49,7 @@ const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
         {...props}
       >
         {children}
-        {showTooltip && tooltipText.length > 0 && (
-          <span className="absolute -top-8 rounded-lg bg-gray-200 px-2 py-1 text-sm">
-            {tooltipText}
-          </span>
-        )}
-      </button>
+      </Comp>
     );
   }
 );

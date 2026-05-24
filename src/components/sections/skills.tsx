@@ -8,8 +8,8 @@ const SkillsSection = () => {
     <Container id="skills">
       <SectionHeader label="Technical Skills" />
 
-      {/* All Skills Together */}
-      <div className="flex flex-wrap justify-center gap-16">
+      {/* All Skills Together in a single grid, sorted by Languages -> Frameworks -> Technologies */}
+      <div className="flex flex-wrap justify-center gap-16 mt-8">
         {[
           ...LANGUAGES,
           ...FRAMEWORKS_LIBRARIES,

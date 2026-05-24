@@ -19,6 +19,7 @@ type ProjectDetailsProps = ProjectDetailsType & {
 const ProjectDetails = ({
   name,
   description,
+  dates,
   technologies,
   url,
   previewImage,
@@ -95,14 +96,32 @@ const ProjectDetails = ({
       {/* Content */}
       <div
         className={mergeClasses(
-          'flex flex-col gap-3 p-4 md:w-1/2 md:p-6 ml-[20px] mt-[10px]',
-          layoutType === 'default' ? '' : 'md:order-first'
+          'flex flex-col justify-center gap-3 p-6 md:w-1/2',
+          layoutType === 'default' ? 'md:pl-8' : 'md:order-first md:pr-8'
         )}
       >
-        <Typography variant="subtitle" className="font-semibold text-gray-900">
-          {name}
-        </Typography>
-        <Typography>{description}</Typography>
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
+          <Typography variant="subtitle" className="font-semibold text-gray-900">
+            {name}
+          </Typography>
+          {dates && (
+            <Typography className="text-gray-700 italic text-sm">
+              {dates}
+            </Typography>
+          )}
+        </div>
+        {Array.isArray(description) ? (
+          <ul className="flex flex-col gap-2 md:gap-1">
+            {description.map((sentence, index) => (
+              <Typography key={index} className="flex gap-2">
+                <span className="shrink-0">-</span>
+                <span>{sentence}</span>
+              </Typography>
+            ))}
+          </ul>
+        ) : (
+          <Typography>{description}</Typography>
+        )}
         <div className="flex flex-wrap gap-2">
           {technologies?.map((technology, index) => (
             <Tag key={index} label={technology} />

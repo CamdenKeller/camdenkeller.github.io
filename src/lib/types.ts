@@ -8,20 +8,25 @@ export type TechDetails = {
 };
 
 export type ExperienceDetails = {
-  logo: string | StaticImageData;
+  logo?: string | StaticImageData;
   darkModeLogo?: string | StaticImageData;
-  logoAlt: string;
+  secondaryLogo?: string | StaticImageData;
+  secondaryDarkModeLogo?: string | StaticImageData;
+  secondaryLogoAlt?: string;
+  logoAlt?: string;
   position: string;
   company?: string;
   currentlyWorkHere?: boolean;
   startDate: Date;
   endDate?: Date;
   summary: string[];
+  url?: string;
 };
 
 export type ProjectDetails = {
   name: string;
-  description: string;
+  description: string | string[];
+  dates?: string;
   url?: string;
   previewImage: string | StaticImageData;
   darkModePreviewImage?: string | StaticImageData;

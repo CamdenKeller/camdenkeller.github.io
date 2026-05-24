@@ -26,7 +26,7 @@ const timelineData = [
   {
     year: '2024',
     title: 'Author',
-    description: 'Published “Surf&apos;s Down”, an op-ed on stormwater pollution, read by 51,000 weekly readers',
+    description: 'Published "Surf\'s Down", an op-ed on stormwater pollution, read by 51,000 weekly readers',
   },
   {
     year: '2023',
@@ -67,8 +67,8 @@ const AboutMeSection = () => {
   const [currentShapeIndex, setCurrentShapeIndex] = useState(0);
 
   const renderText = (text: string) => {
-    if (text.includes('Surf&apos;s Down')) {
-      const parts = text.split('Surf&apos;s Down');
+    if (text.includes("Surf's Down")) {
+      const parts = text.split("Surf's Down");
       return (
         <>
           {parts[0]}<Link
@@ -77,7 +77,7 @@ const AboutMeSection = () => {
             withUnderline
             href="https://www.sunnews.org/surfs-down/"
           >
-            Surf&apos;s Down
+            {"Surf's Down"}
           </Link>{parts[1]}
         </>
       );
@@ -130,11 +130,10 @@ const AboutMeSection = () => {
                 key={index}
                 src={image.src}
                 alt={image.alt}
-                className={`absolute z-10 h-[360px] w-[280px] border-8 border-gray-50 max-md:left-5 md:right-0 md:top-0 md:h-[420px] md:w-[340px] lg:h-[480px] lg:w-[400px] transition-opacity duration-[2000ms] ease-in-out cursor-pointer ${
-                  index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                className={`absolute z-10 h-[360px] w-[280px] border-8 border-gray-50 max-md:left-5 md:right-0 md:top-0 md:h-[420px] md:w-[340px] lg:h-[480px] lg:w-[400px] transition-opacity duration-[2000ms] ease-in-out ${
+                  index === currentImageIndex ? 'opacity-100' : 'opacity-0 pointer-events-none'
                 }`}
                 style={{ objectFit: 'cover' }}
-                onClick={() => handleImageClick(index)}
               />
             ))}
             {images.map((image, index) => (
@@ -143,7 +142,7 @@ const AboutMeSection = () => {
                 src={image.src}
                 alt={image.alt}
                 className={`absolute h-[360px] w-[320px] border-8 border-transparent max-md:top-5 md:bottom-0 md:left-0 md:h-[420px] md:w-[340px] lg:h-[480px] lg:w-[400px] transition-opacity duration-[2000ms] ease-in-out cursor-pointer ${
-                  index === nextImageIndex ? 'opacity-100' : 'opacity-0'
+                  index === nextImageIndex ? 'opacity-100' : 'opacity-0 pointer-events-none'
                 }`}
                 style={{ objectFit: 'cover' }}
                 onClick={() => handleImageClick(index)}
@@ -231,25 +230,16 @@ const AboutMeSection = () => {
             {/* Removed indicator dots as requested */}
           </div>
           {/* Timeline */}
-          <Typography variant="h3" className="mt-4 mb-1">Recent Experiences</Typography>
+          <Typography variant="h3" className="mt-4 mb-1">Personal Milestones</Typography>
           <div className="relative">
             {/* Timeline items */}
             <div className="space-y-12">
               {timelineData.map((item, index) => {
                 if (index >= 2 && !showAll) return null;
-                const timelineBubble = (
+                return (
                   <div 
                     key={index} 
-                    className={`group relative ${
-                      index < 2 
-                        ? 'opacity-100' 
-                        : showAll 
-                          ? 'pop-in' 
-                          : 'opacity-0 pointer-events-none'
-                    }`}
-                    style={{
-                      animationDelay: showAll && index >= 2 ? `${(timelineData.length - 1 - index) * 150}ms` : '0ms'
-                    }}
+                    className="group relative transition-all duration-300"
                   >
                     {/* Timeline connector */}
                     {index < timelineData.length - 1 && (
@@ -289,30 +279,16 @@ const AboutMeSection = () => {
                     </div>
                   </div>
                 );
-                // Insert Show More button after the second bubble
-                if (timelineData.length > 2 && index === 1 && !showAll) {
-                  return [
-                    timelineBubble,
-                    <div key="show-more-btn" className="flex justify-center mt-4">
-                      <button
-                        onClick={() => setShowAll((prev) => !prev)}
-                        className="rounded-full bg-gray-300 hover:bg-gray-400 px-6 py-2 text-gray-800 font-medium shadow transition-colors duration-200"
-                      >
-                        Show More
-                      </button>
-                    </div>
-                  ];
-                }
-                return timelineBubble;
               })}
-              {/* Show Less button at the end if expanded */}
-              {timelineData.length > 2 && showAll && (
+              
+              {/* Show More / Show Less button outside mapping loop */}
+              {timelineData.length > 2 && (
                 <div className="flex justify-center mt-4">
                   <button
                     onClick={() => setShowAll((prev) => !prev)}
                     className="rounded-full bg-gray-300 hover:bg-gray-400 px-6 py-2 text-gray-800 font-medium shadow transition-colors duration-200"
                   >
-                    Show Less
+                    {showAll ? 'Show Less' : 'Show More'}
                   </button>
                 </div>
               )}

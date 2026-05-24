@@ -2,6 +2,7 @@
 
 import { SOCIAL_LINKS } from '@/lib/data';
 import IconButton from '@/components/general/icon-button';
+import Link from '@/components/navigation/link';
 
 const SocialIcons = () => {
   return (
@@ -9,9 +10,11 @@ const SocialIcons = () => {
       {SOCIAL_LINKS.map((socialLink, index) => (
         <IconButton
           key={index}
-          onClick={() => window.open(socialLink.url, '_blank')}
+          asChild
         >
-          <socialLink.icon />
+          <Link href={socialLink.url} externalLink noCustomization>
+            <socialLink.icon />
+          </Link>
         </IconButton>
       ))}
     </div>

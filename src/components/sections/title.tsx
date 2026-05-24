@@ -27,26 +27,30 @@ const TitleSection = () => {
         <div className="flex max-w-3xl flex-grow flex-col justify-center gap-8 md:order-first md:items-start md:justify-center 2xl:gap-12">
           <div className="flex flex-col gap-2">
             <Typography variant="h1">
-              <span className="bg-gradient-to-r from-blue-800 via-blue-600 to-blue-300 bg-clip-text text-transparent animate-pulse-wave">
+              <span className="inline-block bg-gradient-to-r from-blue-800 via-blue-600 to-blue-300 bg-clip-text text-transparent animate-pulse-wave">
                 Hi! I&apos;m Cam
               </span>{" "}
               <span className="inline-block animate-[slide-in-from-right_2.5s_ease-out_forwards] align-middle">
-                <Image src={Wave} alt="Wave" width={48} height={48} className="inline-block align-middle" priority />
+                <Image src={Wave} alt="Wave" width={48} height={48} className="inline-block align-middle animate-waving-hand" priority />
               </span>
             </Typography>
             <div className="h-1 w-16 bg-gradient-to-r from-blue-800 to-blue-300 rounded-full"></div>
             <Typography>
-            Sophomore at Cornell University double-majoring in Computer Science and Cognitive Science, passionate about applying technology to address environmental and social challenges.
-            Please take a look around to explore my projects, skills, and experiences.
+              Incoming Junior at Cornell University double-majoring in Computer Science and Cognitive Science, passionate about applying technology to address environmental and social challenges.
+              Please take a look around to explore my projects, skills, and experiences.
             </Typography>
           </div>
-          <div className="flex flex-col gap-2">
-            <div className="flex gap-2">
-              <MapPin className="stroke-gray-600" />
-              <Typography>Seal Beach, CA </Typography>
-              <div className="flex items-center gap-2"></div>
-              <MapPin className="stroke-gray-600" />
-              <Typography>Ithaca, NY</Typography>
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+              <div className="flex items-center gap-1.5">
+                <MapPin className="stroke-gray-600 w-5 h-5" />
+                <Typography className="text-gray-700">Seal Beach, CA</Typography>
+              </div>
+              <span className="hidden sm:inline text-gray-300">|</span>
+              <div className="flex items-center gap-1.5">
+                <MapPin className="stroke-gray-600 w-5 h-5" />
+                <Typography className="text-gray-700">Ithaca, NY</Typography>
+              </div>
             </div>
 
             <div className="flex items-center gap-2">

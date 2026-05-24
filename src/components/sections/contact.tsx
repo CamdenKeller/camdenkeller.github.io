@@ -11,13 +11,8 @@ import KamiraBand from '/public/images/contact_photos/kamira_band.jpg';
 import Waterfall from '/public/images/contact_photos/waterfall.jpg';
 import Lakehouse from '/public/images/contact_photos/lakehouse.jpg';
 import Waterpolo from '/public/images/contact_photos/waterpolo.jpg';
-import useWindowSize from '@/hooks/use-window-size';
-
-
 
 const ContactSection = () => {
-  const { width } = useWindowSize();
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -113,11 +108,10 @@ const ContactSection = () => {
                 key={index}
                 src={image}
                 alt={`Cam ${index + 1}`}
-                className={`absolute z-10 h-[360px] w-[280px] border-8 border-gray-50 max-md:left-5 md:left-0 md:top-0 md:h-[420px] md:w-[340px] lg:h-[480px] lg:w-[400px] transition-opacity duration-[2000ms] ease-in-out cursor-pointer ${
-                  index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                className={`absolute z-10 h-[360px] w-[280px] border-8 border-gray-50 max-md:left-5 md:left-0 md:top-0 md:h-[420px] md:w-[340px] lg:h-[480px] lg:w-[400px] transition-opacity duration-[2000ms] ease-in-out ${
+                  index === currentImageIndex ? 'opacity-100' : 'opacity-0 pointer-events-none'
                 }`}
                 style={{ objectFit: 'cover' }}
-                onClick={() => handleImageClick(index)}
               />
             ))}
             {contactImages.map((image, index) => (
@@ -126,7 +120,7 @@ const ContactSection = () => {
                 src={image}
                 alt={`Cam ${index + 1}`}
                 className={`absolute h-[360px] w-[320px] border-8 border-transparent max-md:top-5 md:bottom-0 md:right-0 md:h-[420px] md:w-[340px] lg:h-[480px] lg:w-[400px] transition-opacity duration-[2000ms] ease-in-out cursor-pointer ${
-                  index === nextImageIndex ? 'opacity-100' : 'opacity-0'
+                  index === nextImageIndex ? 'opacity-100' : 'opacity-0 pointer-events-none'
                 }`}
                 style={{ objectFit: 'cover' }}
                 onClick={() => handleImageClick(index)}

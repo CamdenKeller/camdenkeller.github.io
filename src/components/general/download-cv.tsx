@@ -4,12 +4,10 @@ import Button from '@/components/general/button';
 
 const DownloadCV = () => {
   return (
-    <Button
-      onClick={() =>
-        window?.open('/files/Camden_Keller_Resume.pdf', '_blank')
-      }
-    >
-      Download Resume
+    <Button asChild>
+      <a href="/files/Camden_Keller_Resume.pdf" target="_blank" rel="noopener noreferrer" download>
+        Download Resume
+      </a>
     </Button>
   );
 };

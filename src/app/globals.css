@@ -43,40 +43,6 @@
   }
 }
 
-@keyframes bubble-in {
-  0% {
-    opacity: 0;
-    transform: scale(0.7) translateY(15px);
-  }
-  60% {
-    opacity: 1;
-    transform: scale(1.05) translateY(-3px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-@keyframes bubble-out {
-  0% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.7) translateY(15px);
-  }
-}
-
-.bubble-in {
-  animation: bubble-in 0.8s ease-out forwards;
-}
-
-.bubble-out {
-  animation: bubble-out 0.5s ease-in forwards;
-}
-
 @keyframes pulse-wave {
   0%, 100% {
     opacity: 1;
@@ -98,4 +64,8 @@
 
 .animate-pulse-wave {
   animation: pulse-wave 4s ease-in-out infinite;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
 }

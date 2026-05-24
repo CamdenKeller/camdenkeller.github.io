@@ -24,11 +24,20 @@ import Postman from "/public/images/icons/postman.webp";
 import GCP from "/public/images/icons/gcp.png";
 import Jupyter from "/public/images/icons/jupyter.png";
 import HTMLCSSJavaScript from "/public/images/icons/htmlcssjavascript.png";
+import FillerIcon from "/public/images/icons/filler.svg";
+import OCaml from "/public/images/icons/ocaml.webp";
+import FastAPI from "/public/images/icons/fastapi.svg";
+import MongoDB from "/public/images/icons/mongodb.svg";
+import NumPy from "/public/images/icons/numpy.svg";
+import Pandas from "/public/images/icons/pandas.svg";
+import ScikitLearn from "/public/images/icons/scikit-learn.svg";
 
 import LogoSeaBridge from "/public/images/logos/logo-seabridge-sustainability.jpeg";
 import LogoGreenClub from "/public/images/logos/logo-greenclub.png";
 import LogoLifeguard from "/public/images/logos/logo-lifeguard.png";
 import LogoCMSX from "/public/images/logos/logo-cmsx.svg";
+import LogoLockheed from "/public/images/logos/logo-lockheed-v2.png";
+import LogoGeneralDynamics from "/public/images/logos/logo-general-dynamics-v2.png";
 
 import PacMan from "/public/images/projects/pac-man.png";
 import Asteroids from "/public/images/projects/asteroids.svg";
@@ -36,6 +45,7 @@ import BigRedBeli1 from "/public/images/projects/big-red-beli-1.svg";
 import BigRedBeli2 from "/public/images/projects/big-red-beli-dark-2.svg";
 import GymCrowd1 from "/public/images/projects/gymcrowd-1.svg";
 import GymCrowd2 from "/public/images/projects/gymcrowd-2.svg";
+import FillerProject from "/public/images/projects/filler.svg";
 
 import { ExperienceDetails, ProjectDetails, TechDetails } from "@/lib/types";
 
@@ -94,9 +104,14 @@ export const LANGUAGES: TechDetails[] = [
     url: "https://www.geeksforgeeks.org/sql/sql-tutorial/",
   },
   {
-    label: "Typescript",
+    label: "TypeScript",
     logo: Typescript,
     url: "https://www.typescriptlang.org/",
+  },
+  {
+    label: "OCaml",
+    logo: OCaml,
+    url: "https://ocaml.org/",
   },
   {
     label: "Kotlin",
@@ -118,17 +133,17 @@ export const FRAMEWORKS_LIBRARIES: TechDetails[] = [
     url: "https://flask.palletsprojects.com/en/stable/",
   },
   {
+    label: "FastAPI",
+    logo: FastAPI,
+    url: "https://fastapi.tiangolo.com/",
+  },
+  {
     label: "SQLAlchemy",
     logo: SQLAlchemy,
     url: "https://www.sqlalchemy.org/",
   },
   {
-    label: "LangGraph",
-    logo: LangGraph,
-    url: "https://www.langchain.com/langgraph",
-  },
-  {
-    label: "React.js",
+    label: "React",
     logo: ReactIcon,
     url: "https://react.dev/",
   },
@@ -138,15 +153,25 @@ export const FRAMEWORKS_LIBRARIES: TechDetails[] = [
     url: "https://nextjs.org/",
   },
   {
-    label: "Tailwind CSS",
-    logo: TailwindCSS,
-    url: "https://tailwindcss.com/",
+    label: "LangGraph",
+    logo: LangGraph,
+    url: "https://www.langchain.com/langgraph",
   },
-  // {
-  //   label: "Jetpack Compose",
-  //   logo: JetpackCompose,
-  //   url: "https://developer.android.com/compose",
-  // },
+  {
+    label: "NumPy",
+    logo: NumPy,
+    url: "https://numpy.org/",
+  },
+  {
+    label: "Pandas",
+    logo: Pandas,
+    url: "https://pandas.pydata.org/",
+  },
+  {
+    label: "scikit-learn",
+    logo: ScikitLearn,
+    url: "https://scikit-learn.org/stable/",
+  },
 ];
 
 export const TOOLS_PLATFORMS: TechDetails[] = [
@@ -157,9 +182,9 @@ export const TOOLS_PLATFORMS: TechDetails[] = [
     url: "https://aws.amazon.com/",
   },
   {
-    label: "Git",
-    logo: Git,
-    url: "https://git-scm.com/",
+    label: "GCP",
+    logo: GCP,
+    url: "https://cloud.google.com/",
   },
   {
     label: "Docker",
@@ -167,28 +192,36 @@ export const TOOLS_PLATFORMS: TechDetails[] = [
     url: "https://www.docker.com/",
   },
   {
+    label: "MongoDB",
+    logo: MongoDB,
+    url: "https://www.mongodb.com/",
+  },
+  {
+    label: "Git",
+    logo: Git,
+    url: "https://git-scm.com/",
+  },
+  {
     label: "Postman",
     logo: Postman,
     url: "https://www.postman.com/",
   },
-  // {
-  //   label: "GCP",
-  //   logo: GCP,
-  //   url: "https://cloud.google.com/",
-  // },
-  // {
-  //   label: "Figma",
-  //   logo: Figma,
-  //   url: "https://www.figma.com/",
-  // },
-  // {
-  //   label: "Jupyter",
-  //   logo: Jupyter,
-  //   url: "https://jupyter.org/",
-  // },
 ];
 
 export const EXPERIENCES: ExperienceDetails[] = [
+  {
+    logo: LogoLockheed,
+    logoAlt: "Lockheed Martin logo",
+    secondaryLogo: LogoGeneralDynamics,
+    secondaryLogoAlt: "General Dynamics logo",
+    company: "Lockheed Martin & General Dynamics",
+    position: "Incoming Software Engineer Intern",
+    startDate: new Date(2026, 5),
+    endDate: new Date(2026, 7),
+    summary: [
+      "Developing C2BMC software to integrate sensor, interceptor, and communications systems for real-time ballistic missile defense coordination",
+    ],
+  },
   {
     logo: LogoCMSX,
     logoAlt: "CMSX logo",
@@ -197,8 +230,11 @@ export const EXPERIENCES: ExperienceDetails[] = [
     startDate: new Date(2025, 8),
     currentlyWorkHere: true,
     summary: [
-      "Develop Cornell's official course management system supporting 8,000+ students across 140+ courses",
+      "Maintain Cornell’s course management system: 8,000+ students, 100+ courses, 100,000+ line codebase",
+      "Revived dormant PeopleSoft Enrollment Sync project, developing JUnit and Selenium test suites",
+      "Resolved authorization vulnerabilities, late-submission inconsistencies, and input validation issues",
     ],
+    url: "https://www.cs.cornell.edu/projects/cms/cmsx/",
   },
   {
     logo: LogoSeaBridge,
@@ -208,37 +244,60 @@ export const EXPERIENCES: ExperienceDetails[] = [
     startDate: new Date(2025, 4),
     endDate: new Date(2025, 8),
     summary: [
-      "Co-led development of enterprise RAG platform MVP automating ESG reporting with LangGraph AI agents and a scalable AWS data pipeline",
+      "Co-led 8-person team to deliver MVP of enterprise RAG platform to automate ESG reporting",
+      "Architected data ingestion pipeline with AWS S3, Lambda, and MongoDB to process 5,000+ documents",
+      "Shipped 5 LangGraph AI agents for data extraction and analysis, saving 400 analyst hours annually",
     ],
+    url: "https://www.seabridgesustainability.com/services",
   },
   {
     logo: LogoGreenClub,
     logoAlt: "GreenClub logo",
     company: "Cornell GreenClub",
-    position: "Software Developer",
+    position: "Technical Lead (pathOS)",
     startDate: new Date(2025, 1),
     currentlyWorkHere: true,
     summary: [
-      "Built platform for carbon-cutting routing tool and led a design process grounded in stakeholder needs",
+      "Lead full-stack development of route optimization platform reducing 10+ tons of CO2 emissions annually",
+      "Built physics-informed machine learning model to predict fuel consumption with less than 4% error",
+      "Reduced AWS costs by 90% via Wake-on-Demand, using EC2 hibernation, Lambda, and EventBridge",
     ],
+    url: "https://www.joingreenclub.com/",
   },
   {
     logo: LogoLifeguard,
     logoAlt: "Lifeguard logo",
+    company: "City of Seal Beach",
     position: "Ocean Lifeguard",
     startDate: new Date(2024, 4),
     endDate: new Date(2024, 7),
     summary: [
-      "Safeguarded thousands of beachgoers daily and mentored junior lifeguards in rescue skills and teamwork",
+      "Ensured beach safety and responded to emergencies as part of a team serving 3,000+ beachgoers daily",
+      "Mentored 18 junior lifeguards in ocean rescue skills, teamwork, and early leadership development",
     ],
+    url: "https://www.sealbeachca.gov/Departments/Marine-Safety-Lifeguards",
   },
 ];
 
 export const PROJECTS: ProjectDetails[] = [
   {
-    name: "Big Red Beli – Backend Developer",
-    description:
-      "A social app for reviewing Cornell dining spots and keeping up with friends’ food ratings",
+    name: "TerminalTok",
+    dates: "Nov 2025 – Dec 2025",
+    description: "A real-time terminal-based social platform that lets users send messages, stream media, and receive personalized content recommendations.",
+    previewImage: FillerProject,
+    url: "https://www.youtube.com/watch?v=JJSdvPSbKjI",
+    technologies: [
+      "OCaml",
+      "Concurrent Programming",
+      "Matrix Factorization",
+      "Collaborative Filtering",
+      "Media Streaming",
+    ],
+  },
+  {
+    name: "Big Red Beli",
+    dates: "Apr 2025 – May 2025",
+    description: "A dining review application backend that lets users search and review local restaurants with optimized response times.",
     url: "https://github.com/lshen0/hack-challenge#",
     previewImage: BigRedBeli1,
     additionalImages: [BigRedBeli2],
@@ -246,50 +305,38 @@ export const PROJECTS: ProjectDetails[] = [
       "Python",
       "Flask",
       "SQLAlchemy",
-      "RESTful APIs",
       "Docker",
-      "Google Cloud",
+      "GCP",
+      "RESTful APIs",
+      "Relational Database Design",
     ],
   },
   {
-    name: "Pac-Man – Game Developer",
-    description:
-      "An arcade game with strategic ghost movement powered by custom AI and pathfinding",
+    name: "Pac-Man",
+    dates: "Apr 2025 – May 2025",
+    description: "A classic Pac-Man game simulation showcasing intelligent, real-time pathfinding ghosts designed to systematically track down the player.",
     previewImage: PacMan,
     technologies: [
       "Java",
+      "Swing",
+      "AI Pathfinding",
       "Dijkstra's Algorithm",
       "Priority Queue",
-      "Artificial Intelligence",
-      "Swing",
+      "Simulation Testing",
     ],
   },
   {
-    name: "GymCrowd – Android Developer",
-    description:
-      "A real-time gym tracker to help students avoid peak hours through live occupancy updates",
-    url: "https://github.com/CamdenKeller/GymCrowd",
-    previewImage: GymCrowd1,
-    additionalImages: [GymCrowd2],
-    technologies: [
-      "Kotlin",
-      "Jetpack Compose",
-      "Model-View-ViewModel",
-      "Android Studio",
-      "API endpoints",
-    ],
-  },
-  {
-    name: "Asteroids – Game Developer",
-    description:
-      "A retro-style game with custom mechanics for movement, spawning, firing, and collisions",
+    name: "Asteroids",
+    dates: "Oct 2024 – Nov 2024",
+    description: "An interactive space arcade game where players pilot a spaceship, dodge and shoot incoming asteroids, and rack up high scores.",
     previewImage: Asteroids,
     technologies: [
       "Python",
-      "Model-View-Controller",
-      "JSON Parsing",
-      "Vectors",
-      "Kivy",
+      "Game Loop",
+      "Physics Engine",
+      "Sound Effects",
+      "Animations",
+      "MVC Architecture",
     ],
   },
 ];
