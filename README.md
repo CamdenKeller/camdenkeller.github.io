@@ -5,14 +5,13 @@ Welcome to my personal website! I built this as a digital portfolio to showcase 
 ## Features
 
 - **About Me**: Introduction and background, including education and interests
-- **Experience**: Timeline of professional experiences
-- **Skills**: Visual display of technical proficiencies
-- **Beyond Tech**: Personal interests, travel, and advocacy
-- **Projects**: Highlights of selected software projects
-- **Contact**: Easy way to get in touch
+- **Professional Experience**: Timeline of my professional experiences
+- **Beyond Tech**: What shapes me and personal milestones
+- **Technical Projects**: Selected software projects
+- **Technical Skills**: Technical skills and proficiencies
+- **Contact**: Easy way to get in touch for collaborations or opportunities
 - **Downloadable Resume**: PDF resume available for download
-- **Dark/Light Mode**: Theme switcher for user preference
-- **Responsive Design**: Looks great on all devices
+- **Themes**: Light/Dark mode switching, defaulting to dark mode
 
 ## Tech Stack
 
