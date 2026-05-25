@@ -26,7 +26,7 @@ const timelineData = [
   {
     year: '2025',
     title: 'Athlete',
-    description: 'Led the Cornell Men\'s Water Polo team as Captain and named NY State MVP',
+    description: "Led the Cornell Men's Club Water Polo team as Captain and was named NY State MVP",
   },
   {
     year: '2024',
@@ -58,7 +58,7 @@ const whatShapesMe = [
   },
   {
     tag: { label: 'World Traveler', className: 'bg-green-100 text-green-800' },
-    text: 'visited 77 countries across all seven continents',
+    text: 'visited 77 countries across all 7 continents',
   },
   {
     tag: { label: 'Wave Chaser', className: 'bg-cyan-100 text-cyan-800' },
