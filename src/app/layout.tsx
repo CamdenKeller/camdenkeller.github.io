@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   keywords: ["Cam Keller", "Software Engineer", "Cornell University", "Portfolio", "Computer Science", "Cognitive Science"],
   openGraph: {
     title: "Cam Keller | Software Engineer",
-    description: "Cornell University Computer Science and Cognitive Science student building scalable systems, cloud infrastructure, and full-stack applications.",
+    description: "Cornell University Computer Science and Cognitive Science student building scalable systems, cloud infrastructure, and full-stack applications",
     url: "https://camkeller.dev",
     siteName: "Cam Keller Portfolio",
     type: "website",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary",
     title: "Cam Keller | Software Engineer",
-    description: "Cornell University Computer Science and Cognitive Science student building scalable systems, cloud infrastructure, and full-stack applications.",
+    description: "Cornell University Computer Science and Cognitive Science student building scalable systems, cloud infrastructure, and full-stack applications",
   },
 };
 
