@@ -7,6 +7,7 @@ import BviGreenhouse from '/public/images/beyond_tech/bvi_greenhouse.jpeg';
 import MachuPicchu from '/public/images/beyond_tech/machu_picchu.jpg';
 import Lifeguarding from '/public/images/beyond_tech/lifeguarding.jpg';
 import Guitar from '/public/images/beyond_tech/guitar.jpg';
+import FamilyBand from '/public/images/beyond_tech/family_band.jpg';
 
 import SectionHeader from '@/components/data-display/section-header';
 import Container from '@/components/layout/container';
@@ -20,6 +21,7 @@ const images = [
   { src: BviGreenhouse, alt: 'BVI Greenhouse Project' },
   { src: Lifeguarding, alt: 'Lifeguarding' },
   { src: MachuPicchu, alt: 'Machu Picchu' },
+  { src: FamilyBand, alt: 'Family Band' },
 ];
 
 const timelineData = [
@@ -111,7 +113,7 @@ const AboutMeSection = () => {
     }, 7000); 
 
     return () => clearInterval(interval);
-  }, []);
+  }, [currentImageIndex]);
 
   const nextImageIndex = (currentImageIndex + 1) % images.length;
 

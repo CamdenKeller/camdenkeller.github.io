@@ -218,7 +218,7 @@ export const EXPERIENCES: ExperienceDetails[] = [
     secondaryLogo: LogoGeneralDynamics,
     secondaryLogoAlt: "General Dynamics logo",
     company: "Lockheed Martin & General Dynamics",
-    position: "Incoming Software Engineer Intern",
+    position: "Software Engineer Intern",
     startDate: new Date(2026, 5),
     endDate: new Date(2026, 7),
     logoUrl: "https://www.lockheedmartin.com/en-us/index.html",
