@@ -40,8 +40,9 @@ const TitleSection = () => {
             </Typography>
             <div className="h-1 w-16 bg-gradient-to-r from-blue-800 to-blue-300 rounded-full"></div>
             <Typography>
-              Incoming Junior at Cornell University double-majoring in Computer Science and Cognitive Science. I&apos;m passionate about applying technology to address environmental and social challenges.
-              Please take a look around to explore my projects, skills, and experiences.
+              Incoming junior at Cornell University, pursuing an accelerated path to earn both a B.A. in Computer Science and Cognitive Science 
+              and an M.Eng. by May 2028. This combination shapes how I approach engineering: I care not only about technical excellence, but 
+              also about building products that are intuitive and genuinely useful for the people who rely on them.
             </Typography>
           </div>
           <div className="flex flex-col gap-4">

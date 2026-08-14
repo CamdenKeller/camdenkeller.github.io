@@ -224,8 +224,10 @@ export const EXPERIENCES: ExperienceDetails[] = [
     logoUrl: "https://www.lockheedmartin.com/en-us/index.html",
     secondaryLogoUrl: "https://gdmissionsystems.com/",
     summary: [
-      "Develop C2BMC software integrating sensor and interceptor systems for missile defense coordination",
-      "Led sprint planning as interim Scrum Master; refactored classes for maintainability and test coverage"
+      "Eliminated processing errors across 30,000+ messages via multithreaded dynamic track scheduling",
+      "Developed dependency-free custom XML parser classifying 500+ defense designs with 98% accuracy",
+      "Architected logging infrastructure, increasing log coverage by 40% and accelerating root cause analysis"
+
     ],
   },
   {
